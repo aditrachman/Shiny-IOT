@@ -1,0 +1,55 @@
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+#install.packages('RMariaDB')
+```
+
+
+```{r}
+library(RMariaDB)
+```
+
+```{r}
+library(tidyverse)
+library(lubridate)
+library(timetk)
+```
+
+```{r}
+localuserpassword <- ""
+```
+
+```{r}
+storiesDb <- dbConnect(RMariaDB::MariaDB(), user='root', password=localuserpassword, dbname='teknomedika', host='localhost')
+dbListTables(storiesDb)
+```
+ 
+```{r}
+query <- paste("SELECT * FROM mesin5_a")
+rs <- dbSendQuery(storiesDb,query)
+kie <- dbFetch(rs)
+
+```
+
+```{r}
+testo <-kie %>% 
+summarise_by_time(.date_var = waktu, .by = 'hour', Qty = sum(qty)) %>% 
+ mutate(miggu_ke = week(waktu))
+
+```
+
+```{r}
+testo
+```
+
+
+```{r}
+
+ggplot(data=kie, aes(x=waktu, y=qty, group=1)) +
+  geom_line(color="red")+
+  geom_point()
+```
+

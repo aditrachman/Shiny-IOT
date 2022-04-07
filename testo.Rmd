@@ -1,0 +1,22 @@
+---
+title: "pek"
+output: html_document
+date: '2022-04-06'
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+
+```{r}
+library(googlesheets4)
+library(tidyverse)
+df<- read_sheet("https://docs.google.com/spreadsheets/d/1TfqECSPfB_9vNfOv-3NsKO-n3ulq0r1ESm-mEx5yAxg/edit#gid=464822429&range=C3", sheet = "Laporan harian produksi")
+anjay <- df %>% select("Jumlah Finish Good")
+
+anjay
+
+```
+

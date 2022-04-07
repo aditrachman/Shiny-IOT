@@ -1,0 +1,31 @@
+---
+title: "testo"
+output: html_document
+date: '2022-04-06'
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+
+
+```
+
+
+```{r}
+
+library(googlesheets4)
+library(tidyverse)
+
+gs4_deauth()
+gs4_auth(email = "aditrachman23@gmail.com", cache = ".secrets")
+df<- read_sheet("https://docs.google.com/spreadsheets/d/1TfqECSPfB_9vNfOv-3NsKO-n3ulq0r1ESm-mEx5yAxg/edit#gid=464822429&range=C3", sheet = "Laporan harian produksi")
+fg <- df %>% select("Jumlah Finish Goods")
+
+jumlah <- sum(fg$"Jumlah Finish Goods")
+jumlah
+
+```
+

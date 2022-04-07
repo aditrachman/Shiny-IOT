@@ -1,0 +1,14 @@
+name: tessss
+title: tessss
+username:
+account: aditrachman
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 6015939
+bundleId: 5765458
+url: https://aditrachman.shinyapps.io/tessss/
+when: 1649141833.65768
+lastSyncTime: 1649141833.65768
+asMultiple: FALSE
+asStatic: FALSE
+ignoredFiles: Rplots.pdf

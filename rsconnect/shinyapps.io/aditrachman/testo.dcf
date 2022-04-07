@@ -1,0 +1,13 @@
+name: testo
+title: testo
+username:
+account: aditrachman
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 5967441
+bundleId: 5742791
+url: https://aditrachman.shinyapps.io/testo/
+when: 1648601585.37025
+lastSyncTime: 1648601585.37025
+asMultiple: FALSE
+asStatic: FALSE
